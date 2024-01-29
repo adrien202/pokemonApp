@@ -13,17 +13,17 @@ export class AppComponent implements OnInit {
   pokemonSelected: Pokemon| undefined;
 
   ngOnInit(): void {
-    console.log(this.pokemonList)
+    console.log(this.pokemonList);
   }
 
   selectPokemon(pokemonId:string) {
-    const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
+    const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId);
     if (pokemon) {
-      console.log(`Vous avez demandé le pokémon ${pokemon.name}`)
+      console.log(`Vous avez demandé le pokémon ${pokemon.name}`);
     } else {
-      console.log(`Vous avez demandé un pokémon qui n'existe pas`)
+      console.log(`Vous avez demandé un pokémon qui n'existe pas`);
     }
-    this.pokemonSelected= pokemon
+    this.pokemonSelected= pokemon;
 
   }
 }
