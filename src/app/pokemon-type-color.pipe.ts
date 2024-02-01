@@ -11,44 +11,49 @@ export class PokemonTypeColorPipe implements PipeTransform {
 
     switch (type) {
       case 'Feu':
-        color = 'red lighten-1';
+        color = 'bg-danger';
         break;
       case 'Eau':
-        color = 'blue lighten-1';
+        color = 'bg-primary';
         break;
       case 'Plante':
-        color = 'green lighten-1';
+        color = 'bg-success';
         break;
       case 'Insecte':
-        color = 'brown lighten-1';
+        color = '';
         break;
       case 'Normal':
-        color = 'grey lighten-3';
+        color = '';
         break;
       case 'Vol':
-        color = 'blue lighten-3';
+        color = '';
         break;
       case 'Poison':
-        color = 'deep-purple accent-1';
+        color = 'bg-info';
         break;
       case 'Fée':
-        color = 'pink lighten-4';
+        color = '';
         break;
       case 'Psy':
-        color = 'deep-purple darken-2';
+        color = 'bg-secondary-subtle';
         break;
       case 'Electrik':
-        color = 'lime accent-1';
+        color = 'bg-warning';
         break;
       case 'Combat':
-        color = 'deep-orange';
+        color = '';
         break;
       default:
-        color = 'grey';
+        color = 'bg-primary';
         break;
     }
 
-    return 'chip ' + color;
+    if (color == '') {
+      color = 'bg-light'
+    }
+
+
+    return 'badge ' + color;
 
   }
 
