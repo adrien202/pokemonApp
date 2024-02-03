@@ -1,1 +1,46 @@
-<p>detail-pokemon works!</p>
+<div *ngIf="pokemon" class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+        <h2 class="text-center">{{ pokemon.name }}</h2>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-2">
+                    <img [src]="pokemon.picture" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td><strong>{{ pokemon.name }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Points de vie</td>
+                                <td><strong>{{ pokemon.hp }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Dégâts</td>
+                                <td><strong>{{ pokemon.cp }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Types</td>
+                                <td>
+                                    <span *ngFor="let type of pokemon.types" [ngClass]="type | pokemonTypeColor" class="text-black">{{ type }}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Date de création</td>
+                                <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a (click)="goToPokemonList()" class="btn btn-primary">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!pokemon' class="text-center">Aucun pokémon à afficher !</h4>
