@@ -6,7 +6,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Bulbizarre",
         hp: 25,
         cp: 5,
-        picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+        picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Anthony_Sinisuka_Ginting_-_Indonesia_Masters_2018.jpg/1280px-Anthony_Sinisuka_Ginting_-_Indonesia_Masters_2018.jpg",
         types: ["Plante", "Poison"],
         created: new Date()
     },
